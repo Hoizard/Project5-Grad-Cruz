@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Project4.Site1" %>
+
+<%@ Register Src="~/SiteNavigation.ascx" TagPrefix="uc1" TagName="SiteNavigation" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <hr />
+    <form id="form1" runat="server">
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <uc1:SiteNavigation runat="server" id="SiteNavigation" />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <hr />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+            <ContentTemplate>
+        <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="1000" Enabled="true"></asp:Timer>
+        <asp:Label ID="TimerLabel" runat="server" Text=""></asp:Label>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+    </form>
+</body>
+</html>
